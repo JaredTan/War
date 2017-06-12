@@ -14,7 +14,7 @@ class War
 
   def play
     distribute_deck
-    until @player_two.empty? || @player_one.empty?
+    until over?
       play_turn
     end
     conclude
