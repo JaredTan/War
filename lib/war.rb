@@ -65,7 +65,7 @@ class War
     @pile << p1_card
     @pile << p2_card
 
-    check_top_cards
+    check_top_cards unless over?
 
   end
 
@@ -80,7 +80,11 @@ class War
     puts "\n\n#{@player_one.name}'s card count: #{@player_one.count}"
     puts "#{@player_two.name}'s card count: #{@player_two.count}\n"
     puts "_________________________________"
-    sleep(1)
+    sleep(0.2)
+  end
+
+  def over?
+    @player_two.empty? || @player_one.empty?
   end
 
   def conclude
